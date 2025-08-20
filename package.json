@@ -1,0 +1,16 @@
+{
+  "name": "playwright-sandbox",
+  "version": "1.0.0",
+  "description": "Sandbox for test automation via Playwright tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --config=config/playwright.config.js",
+    "report": "npx playwright show-report"
+  },
+  "author": "Aliaksandr Yeutushkou <aliaksandr.yeutushkou@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
