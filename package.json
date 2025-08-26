@@ -14,10 +14,19 @@
     "lint:fix": "eslint . --fix",
     "report": "npx playwright show-report",
     "test": "npx playwright test",
-    "verify": "npm run lint && npm run format:check"
+    "verify": "npm run lint && npm run format:check",
+    "prepare": "husky"
   },
   "author": "Aliaksandr Yeutushkou <aliaksandr.yeutushkou@gmail.com>",
   "license": "MIT",
+  "lint-staged": {
+    "*.{js,mjs,cjs}": [
+      "eslint --fix"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.34.0",
@@ -25,6 +34,8 @@
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "prettier": "^3.6.2"
   }
 }
