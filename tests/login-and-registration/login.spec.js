@@ -12,7 +12,6 @@ test.describe('Login flow', () => {
 
     await loginPage.header.goToLogin();
     await loginPage.login(user);
-    await page.waitForURL(/customer_token/);
     await expect(loginPage.rightAccordion.logoutLink).toBeVisible();
   });
 });

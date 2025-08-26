@@ -28,7 +28,7 @@ test.describe('Order with coupon flow', () => {
     await productPage.addToCart();
     await productPage.header.goToCart();
 
-    let cartPage = new CartPage(page);
+    const cartPage = new CartPage(page);
 
     const subTotalBeforeCouponUsage = await cartPage.getSubTotalValue();
     const totalBeforeCouponUsage = await cartPage.getTotalValue();
@@ -39,11 +39,9 @@ test.describe('Order with coupon flow', () => {
     const subTotalAfterCouponUsage = await cartPage.getSubTotalValue();
     const totalAfterCouponUsage = await cartPage.getTotalValue();
 
-    console.log('Total before coupon: ' + totalBeforeCouponUsage);
-    console.log('Total after coupon: ' + totalAfterCouponUsage);
-
-    await expect(subTotalAfterCouponUsage === subTotalBeforeCouponUsage).toBeTruthy();
-    await expect(totalAfterCouponUsage === totalBeforeCouponUsage * 0.85).toBeTruthy();
+    // Assert that subtotal is unaffected by the coupon and total has 15% discount.
+    await expect(subTotalAfterCouponUsage).toBe(subTotalBeforeCouponUsage);
+    await expect(totalAfterCouponUsage).toBeCloseTo(totalBeforeCouponUsage * 0.85, 2);
 
     await cartPage.clearCart();
   });
