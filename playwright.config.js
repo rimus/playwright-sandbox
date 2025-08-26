@@ -10,7 +10,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://awesome-shop.online',
     trace: 'on-first-retry',
-    headless: false,
+    headless: true,
   },
   projects: [
     /* Test against branded browsers. */
