@@ -33,8 +33,8 @@ export class CartPage extends DefaultPage {
     await this.expandCouponOptionsButton.click();
   }
 
-  async useCoupon(couponCode) {
-    await this.couponInput.fill(couponCode);
+  async useCoupon(coupon) {
+    await this.couponInput.fill(coupon.code);
     await this.applyCouponButton.click();
     await this.successCouponUsageAlert.waitFor({ state: 'attached' });
     await this.successCouponUsageAlert.waitFor({ state: 'detached' });
