@@ -8,9 +8,10 @@ export class LoginPage extends DefaultPage {
     this.loginButton = page.locator('button.btn-primary');
   }
 
-  async login(email, password) {
-    await this.emailInput.fill(email);
-    await this.passwordInput.fill(password);
+  async login(user) {
+    await this.emailInput.fill(user.email);
+    await this.passwordInput.fill(user.password);
     await this.loginButton.click();
+    await this.page.waitForURL(/customer_token/);
   }
 }
