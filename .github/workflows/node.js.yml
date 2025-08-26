@@ -1,10 +1,10 @@
-name: Node.js CI
+name: Job on push / PR
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   test:
