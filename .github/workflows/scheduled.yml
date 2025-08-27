@@ -35,3 +35,9 @@ jobs:
           name: playwright-report-nightly
           path: playwright-report/
           retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: logs-nightly
+          path: logs/
+          retention-days: 7
