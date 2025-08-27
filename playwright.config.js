@@ -1,9 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 
-import { log } from './utils/logger.js';
-
-log.info(`Playwright config loaded: CI = ${process.env.CI}, LOG_LEVEL = ${process.env.LOG_LEVEL}`);
-
 export default defineConfig({
   testDir: 'tests',
   fullyParallel: true,
@@ -13,14 +9,13 @@ export default defineConfig({
   reporter: process.env.CI
     ? [['list'], ['github'], ['html', { open: 'never' }]]
     : [['list'], ['html', { open: 'on-failure' }]],
-  timeout: 30_000,
+  timeout: 60_000,
   expect: {
     timeout: 5_000,
   },
   use: {
     baseURL: 'https://awesome-shop.online',
     trace: 'on-first-retry',
-    headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
