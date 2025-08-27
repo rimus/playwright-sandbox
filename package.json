@@ -17,7 +17,8 @@
     "test:ui": "npx playwright test --ui",
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
-    "install:pw-browsers": "npx playwright install --with-deps",
+    "install:pw-browsers": "npx playwright install && npx playwright install chrome",
+    "install:pw-browsers-deps": "npx playwright install --with-deps",
     "verify": "npm run lint && npm run format:check",
     "prepare": "husky"
   },
