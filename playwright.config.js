@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
+import { log } from './utils/logger.js';
+
+log.info(`Playwright config loaded: CI = ${process.env.CI}, LOG_LEVEL = ${process.env.LOG_LEVEL}`);
+
 export default defineConfig({
   testDir: 'tests',
   fullyParallel: true,
