@@ -39,7 +39,6 @@ test.describe('Order with coupon flow', () => {
     const subTotalAfterCouponUsage = await cartPage.getSubTotalValue();
     const totalAfterCouponUsage = await cartPage.getTotalValue();
 
-    // Assert that subtotal is unaffected by the coupon and total has 15% discount.
     await expect(subTotalAfterCouponUsage).toBe(subTotalBeforeCouponUsage);
     await expect(totalAfterCouponUsage).toBeCloseTo(totalBeforeCouponUsage * 0.85, 2);
 
