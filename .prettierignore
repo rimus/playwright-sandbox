@@ -1,7 +1,28 @@
+### VSCode
+.history
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### Webstorm
+.idea
+
+### Node.js
 node_modules
-build
-coverage
-.playwright
-test-results
+
+### Playwright
 playwright-report
+test-results
+blob-report
+
+### Logs
 logs
+
+### Session storage
+storage
+
+### Docker
+docker-export
