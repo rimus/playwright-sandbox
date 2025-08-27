@@ -1,0 +1,14 @@
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: playwright-sandbox:latest
+    working_dir: /usr/src/app
+    environment:
+      - CI=true
+    command: ['npm', 'run', 'test']
+    volumes:
+      - ./:/usr/src/app
+      - ./docker-export/logs:/usr/src/app/logs
+      - ./docker-export/playwright-report:/usr/src/app/playwright-report
