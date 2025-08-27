@@ -26,6 +26,7 @@ End-to-end tests powered by Playwright, with simple domain models and factories 
 - Run with headed browsers: `npm run test:headed`
 - Run in UI mode: `npm run test:ui`
 - Debug a failing test: `npm run test:debug`
+- Grep by test title: `npm run test:grep -- "coupon"`
 - Open the last HTML report: `npm run report`
 
 Notes:
